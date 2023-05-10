@@ -1,0 +1,38 @@
+# number guessing game
+
+puts "Welcome to my game",""
+print "tell your name: "
+name = gets
+name1 = name.chomp
+puts "Hello, #{name1}!\n" 
+
+puts "I have got a random number between 1 to 100"
+puts "can you guess it?\n"
+target = rand 100 + 1
+guesses = 0
+guessed_it = false
+
+while guesses == 10 || guessed_it == false
+ 
+puts "#{10 - guesses} guesses left"
+
+print "Make a guess: "
+guess = gets.to_i
+
+guesses += 1
+
+
+if guess < target
+    puts"Your guess is LOW"
+elsif guess > target
+    puts "Your guess is HIGH"
+elsif guess == target
+    puts "Good Job, #{name1}!"
+    puts "You guessed the correct number in #{guesses}th guess!"
+    guessed_it=true
+end
+end
+
+unless guessed_it
+    puts "you didn't get my number. It was #{target}."
+end 
